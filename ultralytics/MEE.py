@@ -9,8 +9,6 @@ class SobelConv(nn.Module):
         self.sobel_kernel_x_conv3d = nn.Conv3d(channel, channel, kernel_size=3, padding=1, groups=channel, bias=False)
         self.sobel_kernel_y_conv3d = nn.Conv3d(channel, channel, kernel_size=3, padding=1, groups=channel, bias=False)
 
-        self.sobel_kernel_x_conv3d.weight.data = sobel_kernel_x.clone()
-        self.sobel_kernel_y_conv3d.weight.data = sobel_kernel_y.clone()
 
         self.sobel_kernel_x_conv3d.requires_grad = False
         self.sobel_kernel_y_conv3d.requires_grad = False
